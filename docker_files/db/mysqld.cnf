@@ -1,0 +1,10 @@
+[mysqld]
+character-set-server=utf8mb4
+skip-character-set-client-handshake
+default-storage-engine=innodb
+collation-server=utf8mb4_general_ci
+innodb_file_per_table=1
+# ft_min_word_len=1
+# innodb_ft_min_token_size=1
+# innodb_ft_enable_stopword=0
+# ngram_token_size=1

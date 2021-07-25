@@ -1,0 +1,4 @@
+/.idea/
+/docker_files/db/mysql_files/
+/src
+.env
