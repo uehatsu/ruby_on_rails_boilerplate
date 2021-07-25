@@ -62,7 +62,7 @@ test:
 ```
 docker-compose up -d db
 docker-compose run web rails db:create
-docker-compose stop
+docker-compose down
 ```
 
 8. Run rails server
