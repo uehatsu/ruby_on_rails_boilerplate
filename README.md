@@ -61,7 +61,7 @@ test:
 7. Create databases
 ```
 docker-compose up -d db
-docker-compose run --no-deps web rails db:create
+docker-compose run web rails db:create
 docker-compose stop
 ```
 
