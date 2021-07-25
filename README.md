@@ -16,10 +16,26 @@ docker-compose build
 
 3. Create new rails project
 ```
-docker-compose run --no-deps web rails new src --d mysql
+docker-compose run --no-deps web rails new . -d mysql
 ```
 
-4. Change database configuration
+4. Edit .env file
+```
+vi .env
+```
+
+```
+RAILS_VERSION=6.1.4
+BUILD_TYPE=rebuild
+```
+
+5. Rebuild docker image
+
+```
+docker-compose build
+```
+
+6. Change database configuration
 ```
 vi src/config/database.yml
 ```
@@ -42,25 +58,11 @@ test:
   database: src_test
 ```
 
-5. Create databases
+7. Create databases
 ```
+docker-compose up -d db
 docker-compose run --no-deps web rails db:create
-```
-
-6. Edit .env file
-```
-vi .env
-```
-
-```
-RAILS_VERSION=6.1.4
-BUILD_TYPE=rebuild
-```
-
-7. Rebuild docker image
-
-```
-docker-compose build
+docker-compose stop
 ```
 
 8. Run rails server
